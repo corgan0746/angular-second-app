@@ -1,0 +1,16 @@
+<h1>DBZ Characters</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Square brackets are an indication of a child component waiting to receive data -->
+    <dbz-list [characterList]="characters" (onDeleteEvent)="onDeleteCharacter($event)" ></dbz-list>
+  </div>
+  <div class="col">
+    <!--
+      Here we Listen to the event emmited by the child component
+      $event makes reference to the event object from javascript
+       -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></dbz-add-character>
+  </div>
+</div>

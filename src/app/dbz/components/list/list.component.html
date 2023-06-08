@@ -1,0 +1,32 @@
+<h4>List</h4>
+<ul class="list-group">
+  <li *ngFor=" let char of characterList;
+  let i = index;
+  let firstChar = first;
+  let lastChar = last;
+
+  let isEven = even" [ngClass]="{
+    'list-group-item-success': firstChar,
+    'list-group-item-warning': lastChar,
+    'list-group-item-danger': i === 1
+  }" class="list-group-item fs-5 d-flex justify-content-between align-items-center">
+  <!-- [ngClass] Assigns class based on a condition -->
+
+    <div class="">
+    <span class="text-primary">{{i + 1}} -</span>
+    <span >{{" Name: " + char.name}}</span>
+    <span >{{"  - Power: " + char.power}}</span>
+    <!-- <br>
+    <span>Is the first one: {{firstChar}}</span>
+    <br>
+    <span>Is the last one: {{lastChar}}</span>
+    <br>
+    <span>Is Pair: {{isEven}}</span> -->
+  </div>
+    <button (click)="onDeleteCharacter(char.id)" class="btn btn-danger my-2 ">Delete Character</button>
+
+  </li>
+
+</ul>
+
+

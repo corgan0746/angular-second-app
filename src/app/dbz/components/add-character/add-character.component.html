@@ -1,0 +1,12 @@
+<h4>Add Character</h4>
+<!-- Elements properties for example, [value] inside a html tag, does reference that property in the html -->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <!-- Two way data Binding [()] -->
+  <!-- ngModel is part of the FormsModule which will be included in the respective module that we currently reside -->
+  <input type="text" [(ngModel)]=" character.name" class="form-control mb-2" name="name" placeholder="Character Name">
+  <input type="number" [(ngModel)]=" character.power" name="power" class="form-control" placeholder="Power Level">
+  <button class="btn btn-primary" type="submit">Add</button>
+
+  <!-- "Json Pipe" -->
+  <pre>{{ character | json}}</pre>
+</form>
